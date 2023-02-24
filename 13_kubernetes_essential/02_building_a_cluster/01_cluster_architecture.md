@@ -9,3 +9,5 @@
 3. `kubectl` is a commandline tool to interact with the cluster
 
 3. `Control Plane` is a series of different services that forms Kubernetes master structure
+
+#
