@@ -30,6 +30,7 @@ kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Doc
 ```
 
 3. Verify that all the nodes now have Status of `Ready`
+    - It's now working because networking is installed and setup
 
 **Kubernetes Master Node**
 ```
@@ -68,4 +69,3 @@ kube-proxy-gbx79                                       1/1     Running          
 kube-scheduler-92c60ee3641c.mylabserver.com            1/1     Running             1          10h
 ```
 
-#
