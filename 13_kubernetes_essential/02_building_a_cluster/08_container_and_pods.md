@@ -16,4 +16,40 @@
 1. is a process of running container on individual nodes
     - Kubernetes schedules pods to run on specific servers in order to run containers
 
+## Kubectl
+
+- `kubectl create -f <yml file name>` is used to create a pod
+
+**Example**
+```
+cat << EOF | kubectl create -f -
+apiVersion: v1
+kind: Pod
+metadata:
+    name: nginx
+spec:
+    containers:
+    - name: nginx
+      image: nginx
+EOF
+```
+
+- `kubectl get pods` is used to get all ponds
+    - `-n` flag is used to define specific name space
+    - default name space is used if none given
+
+**Example**
+```
+kubectl get pods -n kube-system
+```
+
+or
+
+```
+kubectl get pods
+
+```
+
+
+
 #
