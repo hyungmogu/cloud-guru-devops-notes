@@ -207,4 +207,3 @@ sudo kubeadm join
 kubectl get nodes
 ```
 
-#
