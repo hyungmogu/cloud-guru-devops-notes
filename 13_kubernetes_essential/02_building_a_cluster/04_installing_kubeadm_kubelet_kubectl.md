@@ -49,4 +49,3 @@ sudo apt-mark hold kubelet kubeadm kubectl
 kubeadm version
 ```
 
-#
