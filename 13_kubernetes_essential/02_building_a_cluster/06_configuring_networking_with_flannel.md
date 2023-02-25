@@ -68,3 +68,4 @@ kube-proxy-gbx79                                       1/1     Running          
 kube-scheduler-92c60ee3641c.mylabserver.com            1/1     Running             1          10h
 ```
 
+#
