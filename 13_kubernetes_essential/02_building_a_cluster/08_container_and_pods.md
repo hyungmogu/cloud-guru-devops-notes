@@ -8,4 +8,3 @@
 2. Pod can have more than 1 container
     - Usually pod has 1 container
 
-#
