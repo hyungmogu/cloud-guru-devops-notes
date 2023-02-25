@@ -140,4 +140,71 @@ sudo apt-get install -y kubelet=1.24.0-00 kubeadm=1.24.0-00 kubectl=1.24.0-00
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
+## Initialize the Cluster
+
+1. On `Control Plane \ Kubernetes Master Node`, initialize the Kubernetes cluster on the control plane node using `kubeadm`
+
+**Kubernetes Control Plane Node**
+```
+sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.24.0
+```
+
+2. Set `kubectl` access
+
+**Kubernetes Control Plane Node**
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+3. Test access to Cluster
+
+**Kubernetes Control Plane Node**
+```
+kubectl get nodes
+```
+
+## Install the Calico Network Add-On
+
+1. On the control plane node, install Calico Networking
+
+**Kubernetes Control Plane Node**
+```
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
+```
+
+2. Check status of the control plane node
+
+**Kubernetes Control Plane Node**
+```
+kubectl get nodes
+```
+
+## Join the Worker Nodes to the Cluster
+
+1. In the control plane node, create the token and copy the `kubeadm join` command
+
+```
+kubeadm token create --print-join-command
+```
+
+2. Copy the full output from the previous command used in the control plane node. This command starts with `kubeadm join`
+
+3. In both worker nodes, paste the full kubeadm join command to join the cluster. Use sudo to run it as root
+
+
+**Kubernetes Worker Nodes** 
+```
+sudo kubeadm join
+```
+
+4. In the control plane node, view cluster status
+    - it takes time to get to `Ready` status
+
+**Kubernetes Control Plane**
+```
+kubectl get nodes
+```
+
 #
