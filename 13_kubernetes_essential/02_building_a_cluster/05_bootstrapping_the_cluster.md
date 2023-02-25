@@ -32,4 +32,4 @@ sudo chown $(id -u) $HOME/.kube/config
 # verify that the kubernetes cluster is working correctly
 kubectl get nodes
 ```
-#
+
