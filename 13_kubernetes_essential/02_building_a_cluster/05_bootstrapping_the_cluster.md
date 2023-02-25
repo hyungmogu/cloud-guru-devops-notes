@@ -21,3 +21,4 @@ sudo cp -i /etc/kubernetes/admin.confg $HOME/.kube/config
 sudo chown $(id -u) $HOME/.kube/config
 ```
 
+#
