@@ -16,3 +16,4 @@
 1. is a process of running container on individual nodes
     - Kubernetes schedules pods to run on specific servers in order to run containers
 
+#
