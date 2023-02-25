@@ -21,4 +21,14 @@ sudo cp -i /etc/kubernetes/admin.confg $HOME/.kube/config
 sudo chown $(id -u) $HOME/.kube/config
 ```
 
-#
+**Kubernetes Nodes**
+```
+# copy paste the following code provided after `sudo kubeadm init`
+[[sudo kubeadm join $controller_ip:6443 --token $token --discovery-token-ca-cert-hash $hash]]
+```
+
+**Kubernetes Master**
+```
+# verify that the kubernetes cluster is working correctly
+kubectl get nodes
+```
