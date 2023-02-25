@@ -16,9 +16,9 @@ a technique of loading a program into a computer by means of a few initial instr
 sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 
 # Setup kubeconfig for the local user on the kube master server
-mkdir -p $HOME/kube
-sudo cp -i /etc/kubernetes/admin.confg $HOME/.kube/config
-sudo chown $(id -u) $HOME/.kube/config
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 **Kubernetes Nodes**
@@ -33,3 +33,4 @@ sudo chown $(id -u) $HOME/.kube/config
 kubectl get nodes
 ```
 
+- After all this, it's expected to have `NOT READY` status
