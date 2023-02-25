@@ -35,4 +35,3 @@ kubectl get nodes
 
 - After all this, it's expected to have `NOT READY` status
 
-#
