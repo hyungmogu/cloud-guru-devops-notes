@@ -33,3 +33,4 @@ sudo chown $(id -u) $HOME/.kube/config
 kubectl get nodes
 ```
 
+#
