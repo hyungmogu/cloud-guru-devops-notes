@@ -23,7 +23,6 @@
         - is done by immediately creating a new pod and replace the damaged / missing one
         - is done to maintain the `desired state`
 
-
 ## Example of Deployment
 
 - Create two replicas
@@ -54,4 +53,55 @@ ports:
 - containerPort: 80
 EOF
 ```
-#
+
+## CMD - kubectl get deployments
+- `kubectl get deployments` is used to get information about list of deployments
+
+**Kubernetes Control Plane**
+```
+kubectl get deployments
+```
+
+```
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   2/2     2            2           16h
+```
+
+## CMD - kubectl describe deployment
+- `kubectl describe deployment <deployment_name>` is used to attain details about a deployment
+
+**Kubernetes Control Plane**
+```
+kubectl describe deployment nginx
+```
+
+```
+Name:                   nginx
+Namespace:              default
+CreationTimestamp:      Sun, 26 Feb 2023 02:59:06 +0000    
+Labels:                 app=nginx
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=nginx
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge 
+Pod Template:
+  Labels:  app=nginx
+  Containers:
+   nginx:
+    Image:        nginx:1.15.4
+    Port:         80/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   nginx-9b644dcd5 (2/2 replicas created)    
+Events:          <none>
+```
