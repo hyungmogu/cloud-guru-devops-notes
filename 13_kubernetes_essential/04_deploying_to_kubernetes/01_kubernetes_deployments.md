@@ -16,4 +16,3 @@
     2. Rolling Updates
     3. Self-healing
 
-#
