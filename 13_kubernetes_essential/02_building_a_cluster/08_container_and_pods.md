@@ -65,7 +65,71 @@ or
 kubectl get pods --all-namespaces
 ```
 
+```
+NAMESPACE     NAME                                         
+          READY   STATUS              RESTARTS   AGE       
+default       nginx                                        
+          0/1     ContainerCreating   0          3m1s      
+
+...
+
+kube-system   kube-flannel-ds-amd64-84vpz                  
+          1/1     Running             1          7h22m     
+kube-system   kube-flannel-ds-amd64-95hj8                  
+          1/1     Running             2          7h22m     
+kube-system   kube-flannel-ds-amd64-ssjqp                  
+          1/1     Running             2          7h22m     
+kube-system   kube-proxy-4qrxs                             
+          1/1     Running             2          18h       
+kube-system   kube-proxy-68545                             
+          1/1     Running             1          7h52m     
+kube-system   kube-proxy-gbx79                             
+          1/1     Running             1          7h51m     
+```
+
 
 ## kubectl describe pod
 1. `kubectl describe pod <POD_NAME>` is useful for troubleshooting an existing / deployed pod
 
+
+
+```
+Name:         nginx
+Namespace:    default
+Priority:     0
+Node:         92c60ee3642c.mylabserver.com/172.31.22.94
+Start Time:   Sun, 26 Feb 2023 01:33:11 +0000
+Labels:       <none>
+Annotations:  <none>
+Status:       Running
+IP:           10.244.1.2
+Containers:
+  nginx:
+    ...
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  default-token-vphm7:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-vphm7
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s  
+                 
+Events:
+  Type     Reason                  Age                  From              
+                     Message
+  ----     ------                  ----                 ----              
+                     -------
+  Normal   Scheduled               8m13s                default-scheduler                      
+  Normal   Pulling                 38s                  kubelet, 92c60ee3642c.mylabserver.com  Pulling image "nginx"
+  Normal   Pulled                  34s                  kubelet, 92c60ee3642c.mylabserver.com  Successfully pulled image "nginx"
+  Normal   Created                 33s                  kubelet, 92c60ee3642c.mylabserver.com  Created container nginx
+  Normal   Started                 33s                  kubelet, 92c60ee3642c.mylabserver.com  Started container nginx
+```
