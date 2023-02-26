@@ -124,4 +124,3 @@ Events:
   Normal  NodeReady                37m   kubelet, 92c60ee3641c.mylabserver.com  Node 92c60ee3641c.mylabserver.com status is now: NodeReady
 ```
 
-#
