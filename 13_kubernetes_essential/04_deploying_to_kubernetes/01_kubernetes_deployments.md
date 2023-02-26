@@ -13,6 +13,45 @@
 
 - `deployments` accomplishes the following:
     1. Scaling
+        - is done by specifying the number of replicas
+        - is done by making sure replicas are evenly spread across multiple nodes for high availability 
     2. Rolling Updates
+        - is a mean of deploying new versions of application 
+        - is done by gradually rolling out new pods and replacing old pods
+            - reduces downtime
     3. Self-healing
+        - is done by immediately creating a new pod and replace the damaged / missing one
+        - is done to maintain the `desired state`
+
+
+## Example of Deployment
+
+- Create two replicas
+
+**Kubernetes Control Plane**
+
+```
+cat <<EOF | kubectl create -f -apiVersion: apps/v1
+kind: Deployment
+metadata: 
+name: nginx-deployment  
+labels: 
+app: nginx 
+spec: 
+replicas: 2  
+selector: 
+matchLabels: 
+app: nginx  
+template: 
+metadata: 
+labels: 
+app: nginx  
+spec:
+containers: 
+- name: nginx
+image: nginx:1.15.4 
+ports:
+- containerPort: 80
+EOF
+```
 
