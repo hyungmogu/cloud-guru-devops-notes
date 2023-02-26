@@ -6,10 +6,8 @@
 
 ## Deployments
 
-- `deployments` are a type of object in kubernetes
 - `deployments` gives you more power to organize and maintain pods
 - `deployments` is useful to start doing something more complex kubernetes project
-- `deployments` allows the creation and management of pods
 - `deployments` tell kubernetes cluster a `desired state` (what kubernetes cluster should look like)
     - kubernetes cluster constantly works in order to maintain the desired state
 
