@@ -18,9 +18,18 @@
 
 ## Kubectl
 
+- Before applying `kubectl create -f`, apply the following command to install necessary modules
+
+**All Nodes**
+```
+wget https://github.com/containernetworking/plugins/releases/download/v0.8.6/cni-plugins-linux-amd64-v0.8.6.tgz
+sudo tar -C /opt/cni/bin -xzvf cni-plugins-linux-amd64-v0.8.6.tgz
+sudo systemctl restart kubelet
+```
+
 - `kubectl create -f <yml file name>` is used to create a pod
 
-**Example**
+**Kubernetes Control Plane**
 ```
 cat << EOF | kubectl create -f -
 apiVersion: v1
@@ -38,7 +47,7 @@ EOF
     - `-n` flag is used to define specific name space
     - default name space is used if none given
 
-**Example**
+**Kubernentes Control Plane**
 ```
 kubectl get pods -n kube-system
 ```
@@ -50,5 +59,12 @@ kubectl get pods
 
 ```
 
+or
 
-#
+```
+kubectl get pods --all-namespaces
+```
+
+
+## kubectl describe pod
+1. `kubectl describe pod <POD_NAME>` is useful for troubleshooting an existing / deployed pod
