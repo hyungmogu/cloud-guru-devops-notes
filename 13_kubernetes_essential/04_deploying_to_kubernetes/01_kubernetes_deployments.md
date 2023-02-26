@@ -6,3 +6,4 @@
 - `deployments` are a type of object in kubernetes
 - `deployments` gives you more power to organize and maintain pods
 
+#
