@@ -133,3 +133,5 @@ Events:
   Normal   Created                 33s                  kubelet, 92c60ee3642c.mylabserver.com  Created container nginx
   Normal   Started                 33s                  kubelet, 92c60ee3642c.mylabserver.com  Started container nginx
 ```
+
+#
