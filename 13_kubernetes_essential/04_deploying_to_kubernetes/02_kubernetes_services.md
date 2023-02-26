@@ -15,3 +15,6 @@
         - making request to `kubernetes services` gives response from 1 of the pods that is part of the service
         - making request to `kubenetes services` is always routed to 1 of the active pods 
     2. 
+
+
+    #
