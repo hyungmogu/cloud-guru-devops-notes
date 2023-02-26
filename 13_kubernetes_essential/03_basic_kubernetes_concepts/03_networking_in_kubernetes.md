@@ -80,3 +80,30 @@ nginx-9b644dcd5-974h6   1/1     Running   0          2m31s   10.244.1.3   92c60e
 nginx-9b644dcd5-wvct7   1/1     Running   0          2m31s   10.244.2.4   92c60ee3643c.mylabserver.com   <none>           <none>
 ```
 
+## kubectl get pods -o wide
+1. `kubectl get pods -o wide` returns information about pods in kubernetes cluster with more detail
+    - Note that ` 10.244.2.7` is an ip address in a **virtual network**
+
+**Kubernetes Control Plane**
+```
+kubectl get pods -o wide
+```
+
+```
+NAME                    READY   STATUS    RESTARTS   AGE    IP           NODE                           NOMINATED NODE   READINESS GATES
+busybox                 1/1     Running   3          154m   10.244.1.5   92c60ee3642c.mylabserver.com   <none>           <none>
+nginx-9b644dcd5-974h6   1/1     Running   1          156m   10.244.1.6   92c60ee3642c.mylabserver.com   <none>           <none>
+nginx-9b644dcd5-wvct7   1/1     Running   1          156m   10.244.2.7   92c60ee3643c.mylabserver.com   <none>           <none>
+```
+
+
+## kubectl exec 
+1. `kubectl exec <pod_name> -- <cli_command>` executeds cli command inside pod
+    - Note that ` 10.244.2.7` is an ip address in a **virtual network**
+
+**Kubernetes Control Plane**
+```
+kubectl exec busybox -- curl 10.244.2.7
+```
+
+#
