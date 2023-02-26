@@ -63,3 +63,5 @@ kube-scheduler-92c60ee3641c.mylabserver.com            1/1     Running   4      
 - `kubelet` is the most important as non-control-plane component
 - `kubelet` is an agent that runs on each node
 - `kubelet` acts as a middleman between `kubernetes api` and container runtime (e.g. docker)
+
+#
