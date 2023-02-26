@@ -43,6 +43,8 @@ spec:
 EOF
 ```
 
+## kubectl get pods
+
 - `kubectl get pods` is used to get all ponds
     - `-n` flag is used to define specific name space
     - default name space is used if none given
@@ -91,7 +93,11 @@ kube-system   kube-proxy-gbx79
 ## kubectl describe pod
 1. `kubectl describe pod <POD_NAME>` is useful for troubleshooting an existing / deployed pod
 
+**Kubernetes Control Plane**
 
+```
+kubectl describe pod nginx
+```
 
 ```
 Name:         nginx
@@ -134,4 +140,10 @@ Events:
   Normal   Started                 33s                  kubelet, 92c60ee3642c.mylabserver.com  Started container nginx
 ```
 
-#
+## kubectl delete pod
+1. `kubectl delete pod <POD_NAME>` is used to remove a pod after use
+
+**Kubernetes Control Plane**
+```
+kubernetes delete pod nginx
+```
