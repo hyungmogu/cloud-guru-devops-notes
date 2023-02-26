@@ -69,4 +69,3 @@ kubectl get pods --all-namespaces
 ## kubectl describe pod
 1. `kubectl describe pod <POD_NAME>` is useful for troubleshooting an existing / deployed pod
 
-#
