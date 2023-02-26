@@ -105,5 +105,3 @@ nginx-9b644dcd5-wvct7   1/1     Running   1          156m   10.244.2.7   92c60ee
 ```
 kubectl exec busybox -- curl 10.244.2.7
 ```
-
-#
