@@ -63,4 +63,38 @@ kube-scheduler-92c60ee3641c.mylabserver.com            1/1     Running   4      
 - `kubelet` is the most important as non-control-plane component
 - `kubelet` is an agent that runs on each node
 - `kubelet` acts as a middleman between `kubernetes api` and container runtime (e.g. docker)
+    - when container needs to be run on a node
+        1. `kubelet` on the node is reached out by kubernetes control plane
+        2. `kubelet` instructs container runtime to run the container
 
+- `kubelet` is not a pod but is a service
+
+```
+sudo systemctl status kubelet
+```
+
+```
+kubelet.service - kubelet: The Kubernetes Node Agent
+   Loaded: loaded (/lib/systemd/system/kubelet.service; enabled; vendor prese
+  Drop-In: /etc/systemd/system/kubelet.service.d
+           └─10-kubeadm.conf
+   Active: active (running) since Sun 2023-02-26 15:10:43 UTC; 1h 0min ago   
+     Docs: https://kubernetes.io/docs/home/
+ Main PID: 879 (kubelet)
+    Tasks: 17 (limit: 2307)
+   CGroup: /system.slice/kubelet.service
+           └─879 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/boot
+
+...
+```
+
+## Kube Proxy
+
+- `kube-proxy` exists in each node, including control plane
+- `kube-proxy` handles networking such as
+    1. network communication between different nodes
+        - writes firewall rules to the routing tables of each node
+        - e.g. a pod talking to another pod
+        - e.g.2. routing traffic from one node to another node
+
+#
