@@ -21,6 +21,12 @@ kube-proxy-gbx79                                       1/1     Running   2      
 kube-scheduler-92c60ee3641c.mylabserver.com            1/1     Running   4          31h
 ```
 
+- kubernetes control plane is formed by:
+    1. `etcd`, 
+    2. `kube-apiserver`, 
+    3. `kube-controller-manager`, 
+    4. `kube-scheduler` 
+
 ## Etcd
 - `etcd` provides distributed and synchronized data storage for the cluster state
 - `etcd` is the distributed storage for the Kubernetes master server
@@ -39,5 +45,21 @@ kube-scheduler-92c60ee3641c.mylabserver.com            1/1     Running   4      
 
 ## Kube Controller Manager
 - `kube-controller-manager` has all the backend stuff
+- `kube-controller-manager` does all the behind the scenes work of controlling the cluster
 
-#
+## Kube Scheduler
+- `kube-scheduler` determines 
+    1. when to run pods
+    2. what nodes those pods need to run on
+- `kube-scheduler` works behind the scene when
+    1. you create a pod 
+    2. you have a deployment
+    3. automation of creating and destroying pods
+
+
+## kubelet
+- `kubelet` is not part of kubernetes control plane
+- `kubelet` is part of individual nodes
+- `kubelet` is the most important as non-control-plane component
+- `kubelet` is an agent that runs on each node
+- `kubelet` acts as a middleman between `kubernetes api` and container runtime (e.g. docker)
