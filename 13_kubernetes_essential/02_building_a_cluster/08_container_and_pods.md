@@ -51,4 +51,3 @@ kubectl get pods
 ```
 
 
-#
