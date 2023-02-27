@@ -4,4 +4,3 @@
 
 1. `Microservices` is the area where Kubernetes really shines
 
-#
