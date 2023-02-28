@@ -24,4 +24,3 @@ kubectl -n robot-shop create -f <path_where_k8s_descriptors_files_are>
 
 <img src="https://user-images.githubusercontent.com/6856382/221775203-6754f7cd-872c-40cc-917a-8c6f64ef1c3e.png">
 
-#
