@@ -39,6 +39,6 @@ kubectl get pods -n robot-shop -w
 4. Use public IP of one of the nodes in your cluster with port 30080 to check result
 
 ```
-htto://$kube_server_public_ip:30080
+http://$kube_server_public_ip:30080
 ```
 
