@@ -70,4 +70,3 @@ kubectl get deployment mongodb -n robot-shop
 kubectl edit deployment mongodb -n robot-shop
 ```
 
-#
