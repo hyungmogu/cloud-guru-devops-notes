@@ -35,3 +35,4 @@ kubectl get pods -n robot-shop -w
 
 4. 
 
+#
