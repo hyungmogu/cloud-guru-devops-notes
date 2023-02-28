@@ -9,3 +9,4 @@ kubectl edit deployment mongodb -n robot-shop
 ```
 
 
+#
