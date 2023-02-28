@@ -41,4 +41,4 @@ kubectl get pods -n robot-shop -w
 ```
 htto://$kube_server_public_ip:30080
 ```
-
+#
