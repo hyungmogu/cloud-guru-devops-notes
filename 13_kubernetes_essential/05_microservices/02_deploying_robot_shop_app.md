@@ -2,9 +2,12 @@
 
 <img src="https://user-images.githubusercontent.com/6856382/221486726-3bb3c8b9-77c3-49d6-8627-f369ed2ec7cf.png">
 
+- `Kubernetes Descriptors` allow easy setup of microservices application involving many components
+- `Kubernetes Descriptors` are a collection of yaml files
+
 ## Steps
 
-1. clone the following ready-made YAML files that can be used to quickly and easily install the application
+1. clone the following github repo containing ready-made YAML files that can be used to quickly and easily install the application
     - `/K8s/descriptors` has all the files needed to setup and service the microserivce application
 
 ```
